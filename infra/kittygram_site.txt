@@ -1,5 +1,5 @@
 IP: 158.160.11.134;
-name_taski: https://alexsakulintaski.ddns.net;
+name_taski: https://alexsakulintaski.hopto.org;
 name_kittygram: https://kittygramphoto.sytes.net;
 login: admin;
 password: Infra12345;
