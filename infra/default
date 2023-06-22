@@ -1,8 +1,10 @@
  server {
+    client_max_body_size 20M;
+    server_tokens off;
     server_name kittygramphoto.sytes.net 158.160.11.134;
     
     location /media/ {
-        root /var/www/kittygram/media/;
+        alias /var/www/kittygram/media/;
     }
 
     location /api/ {
@@ -29,6 +31,7 @@
 }
 
  server {
+    server_tokens off;
     server_name alexsakulintaski.hopto.org 158.160.11.134;
 
     location /api/ {
@@ -56,27 +59,19 @@
 
 }
  server {
+    listen 80;
+    server_name kittygramphoto.sytes.net alexsakulintaski.ddns.net 158.160.11.134;
+
     if ($host = alexsakulintaski.ddns.net) {
         return 301 https://$host$request_uri;
     } # managed by Certbot
 
-
-
-    listen 80;
-    server_name alexsakulintaski.ddns.net;
-    return 404; # managed by Certbot
-
-
-}
- server {
     if ($host = kittygramphoto.sytes.net) {
         return 301 https://$host$request_uri;
     } # managed by Certbot
 
-
-    listen 80;
-    server_name kittygramphoto.sytes.net 158.160.11.134;
     return 404; # managed by Certbot
 
 
 }
+

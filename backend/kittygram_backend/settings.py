@@ -5,9 +5,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-KEY = os.getenv('SECRET_KEY')
-
-SECRET_KEY = KEY
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -87,7 +85,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Moscow'
 
 USE_I18N = True
 
@@ -99,7 +97,7 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = '/var/www/kittygram/media'
 
 STATIC_URL = '/static_backend/'
-STATIC_ROOT = BASE_DIR / 'static_backend'
+STATIC_ROOT = '/var/www/kittygram/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
